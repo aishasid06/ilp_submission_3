@@ -1,0 +1,14 @@
+{
+  "insulin": {
+    "capacity": 0.4,
+    "cooling": true,
+    "heating": false,
+    "servicePoints": [1, 2]
+  },
+  "plasma": {
+    "capacity": 8.0,
+    "cooling": true,
+    "heating": false,
+    "servicePoints": [1]
+  }
+}

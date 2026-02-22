@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: ilp_submission_2
+  datasource:
+    url: jdbc:sqlite:data/drone_orders.db
+    driverClassName: org.sqlite.JDBC
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+
+info:
+  app:
+    name: ILP Submission 2
+    description: ILP Rest Service
+    version: 0.0.1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, env
+  info:
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+server:
+  port: 8080
+
+ilp:
+  drone_service:
+    implementation: ilp_submission_2.service.impl.DroneServiceImpl
+  service:
+    url: https://ilp-rest-2025-bvh6e9hschfagrgy.ukwest-01.azurewebsites.net/

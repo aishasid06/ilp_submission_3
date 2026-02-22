@@ -1,0 +1,115 @@
+### GET health of API
+GET http://localhost:8080/actuator/health
+
+### GET request to retrieve uid
+GET http://localhost:8080/api/v1/uid
+
+### Workable distanceTo A
+POST http://localhost:8080/api/v1/distanceTo
+Content-Type: application/json
+
+{
+  "position1": {
+    "lng": -3.192473,
+    "lat": -255.946233
+  },
+  "position2": {
+    "lng": -3.192473,
+    "lat": 55.942617
+  }
+}
+
+### Workable distanceTo B
+POST http://localhost:8080/api/v1/distanceTo
+Content-Type: application/json
+
+{
+  "position1": {
+    "lng": -3.192473,
+    "lat": 55.946233
+  },
+  "position2": {
+    "lng": -3.192473,
+    "lat": 55.942617
+  },
+  "extra": 0
+}
+
+### Erroneous distanceTo
+POST http://localhost:8080/api/v1/distanceTo
+Content-Type: application/json
+
+{
+  "position1": {
+    "lng": "Hello",
+    "lat": 55.946233
+  },
+  "position2": {
+    "lng": "World",
+    "lat": 55.942617
+  },
+  "extra": 0
+}
+
+### isCloseTo check
+POST http://localhost:8080/api/v1/isCloseTo
+Content-Type: application/json
+
+{
+  "position1": {
+    "lng": -3.192473,
+    "lat": 55.946233
+  },
+  "position2": {
+    "lng": -3.192473,
+    "lat": 55.942617
+  }
+}
+
+### nextPosition check
+POST http://localhost:8080/api/v1/nextPosition
+Content-Type: application/json
+
+{
+  "start": {
+    "lng": -3.192473,
+    "lat": 55.946233
+  },
+  "angle": 45
+}
+
+### isInRegion check
+POST http://localhost:8080/api/v1/isInRegion
+Content-Type: application/json
+
+{
+  "position": {
+    "lng": 1.234,
+    "lat": 1.222
+  },
+  "region": {
+    "name": "some region",
+    "vertices": [
+      {
+        "lng": -3.192473,
+        "lat": 55.946233
+      },
+      {
+        "lng": -3.192473,
+        "lat": 55.942617
+      },
+      {
+        "lng": -3.184319,
+        "lat": 55.942617
+      },
+      {
+        "lng": -3.184319,
+        "lat": 55.946233
+      },
+      {
+        "lng": -3.192473,
+        "lat": 55.946233
+      }
+    ]
+  }
+}
